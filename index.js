@@ -4,8 +4,7 @@ const http = require("http");
 const server = http.createServer(app);
 require("dotenv").config();
 
-console.log(process.env.REACT_FRONTEND_URL);
-const io = require("socket.io")(8900, {
+const io = require("socket.io")(process.env.PORT || 8900, {
   cors: {
     origin: process.env.REACT_FRONTEND_URL,
   },
